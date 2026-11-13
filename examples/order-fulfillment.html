@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BPMN flowchart</title>
+</head>
+<body>
+<pre class="mermaid">
+flowchart TD
+  n0(("Order received"))
+  n1["Review order"]
+  n2{"X#58; Review result"}
+  n3["Request corrections"]
+  n4["Notify customer of rejection"]
+  n5(("Order rejected"))
+  n6{"#43;#58; Prepare fulfillment"}
+  n7["Reserve stock"]
+  n8["Collect payment"]
+  n9{"#43;#58; Preparation complete"}
+  n10["Pack #38; ship"]
+  n11["Send tracking details"]
+  n12(("Order completed"))
+  n0 --&gt; n1
+  n1 --&gt; n2
+  n2 --&gt;|"Needs correction"| n3
+  n3 --&gt;|"Resubmitted"| n1
+  n2 --&gt;|"Rejected"| n4
+  n4 --&gt; n5
+  n2 --&gt;|"Approved"| n6
+  n6 --&gt; n7
+  n6 --&gt; n8
+  n7 --&gt;|"Stock reserved"| n9
+  n8 --&gt;|"Payment collected"| n9
+  n9 --&gt; n10
+  n10 --&gt; n11
+  n11 --&gt; n12
+</pre>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@12.3.0/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, securityLevel: 'strict' });
+</script>
+</body>
+</html>

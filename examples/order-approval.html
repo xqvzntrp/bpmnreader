@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BPMN flowchart</title>
+</head>
+<body>
+<pre class="mermaid">
+flowchart TD
+  n0(("Received"))
+  n1["Review #38; approve"]
+  n2(("Done"))
+  n0 --&gt; n1
+  n1 --&gt; n2
+</pre>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@12.3.0/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, securityLevel: 'strict' });
+</script>
+</body>
+</html>

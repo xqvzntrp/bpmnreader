@@ -1,0 +1,28 @@
+flowchart TD
+  n0(("Order received"))
+  n1["Review order"]
+  n2{"X#58; Review result"}
+  n3["Request corrections"]
+  n4["Notify customer of rejection"]
+  n5(("Order rejected"))
+  n6{"#43;#58; Prepare fulfillment"}
+  n7["Reserve stock"]
+  n8["Collect payment"]
+  n9{"#43;#58; Preparation complete"}
+  n10["Pack #38; ship"]
+  n11["Send tracking details"]
+  n12(("Order completed"))
+  n0 --> n1
+  n1 --> n2
+  n2 -->|"Needs correction"| n3
+  n3 -->|"Resubmitted"| n1
+  n2 -->|"Rejected"| n4
+  n4 --> n5
+  n2 -->|"Approved"| n6
+  n6 --> n7
+  n6 --> n8
+  n7 -->|"Stock reserved"| n9
+  n8 -->|"Payment collected"| n9
+  n9 --> n10
+  n10 --> n11
+  n11 --> n12
