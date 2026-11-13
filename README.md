@@ -189,3 +189,4 @@ NetBeans has cached the old configuration). `bpmn.Tests` is a test-only entry po
 `process-classes` does not compile or put test classes on the application classpath.
 # bpmnreader
 # bpmnreader
+# bpmnreader
